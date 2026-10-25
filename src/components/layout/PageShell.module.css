@@ -1,0 +1,58 @@
+.shell {
+  max-width: 640px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 48px;
+  display: grid;
+  gap: 24px;
+}
+
+/* Wider screens get a little more room; the column itself stays readable. */
+@media (min-width: 768px) {
+  .shell {
+    max-width: 720px;
+    padding-block: 36px 64px;
+    gap: 28px;
+  }
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.titles {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.eyebrow {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.section {
+  display: grid;
+  gap: 14px;
+}
+
+.sectionHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.sectionHint {
+  color: var(--muted);
+  font-size: 0.9rem;
+}

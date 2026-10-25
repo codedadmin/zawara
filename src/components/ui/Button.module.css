@@ -1,0 +1,58 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font: inherit;
+  font-weight: 700;
+  border-radius: var(--radius-lg);
+  border: 0;
+  cursor: pointer;
+  padding: 12px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.button:focus-visible {
+  outline-offset: 3px;
+}
+
+.button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.lg {
+  min-height: 72px;
+  font-size: 1.3rem;
+}
+
+.md {
+  min-height: 60px;
+  font-size: 1.15rem;
+}
+
+.primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.primary:not(:disabled):hover {
+  filter: brightness(1.05);
+}
+
+.secondary {
+  background: var(--surface);
+  color: var(--accent);
+  border: 3px solid var(--accent);
+}
+
+.link {
+  min-height: 44px;
+  font-size: 1rem;
+  font-weight: 400;
+  background: none;
+  color: var(--muted);
+  text-decoration: underline;
+  padding: 8px;
+}

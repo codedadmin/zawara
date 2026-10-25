@@ -1,0 +1,90 @@
+.group {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.legend {
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 0;
+  margin-bottom: 8px;
+}
+
+/* Mobile first: stacked, side by side once there's room. */
+.options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 421px) {
+  .options {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  min-height: 72px;
+  border-radius: var(--radius-lg);
+  border: 3px solid var(--line);
+  background: var(--bg);
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.mark {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 3px solid currentColor;
+  flex: none;
+  display: grid;
+  place-items: center;
+}
+
+.input:checked + .option .mark::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.input:focus-visible + .option {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.input:checked + .yes {
+  border-color: var(--yes);
+  background: var(--yes-soft);
+  color: var(--yes);
+}
+
+.input:checked + .no {
+  border-color: var(--no);
+  background: var(--no-soft);
+  color: var(--no);
+}
+
+.input:checked + .neutral {
+  border-color: var(--accent);
+  color: var(--accent);
+}

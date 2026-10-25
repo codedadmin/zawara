@@ -1,0 +1,59 @@
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+/* On wide screens the list goes two-up. */
+@media (min-width: 768px) {
+  .list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.item {
+  width: 100%;
+  height: 100%;
+  text-align: start;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 16px 18px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4px 14px;
+  align-items: center;
+}
+
+.item:hover {
+  border-color: var(--accent);
+}
+
+.who {
+  font-size: 1.3rem;
+  font-weight: 700;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.off .who {
+  color: var(--muted);
+}
+
+.dish {
+  grid-column: 1;
+  color: var(--muted);
+  font-size: 1rem;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.badge {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}

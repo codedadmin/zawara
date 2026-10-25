@@ -1,0 +1,97 @@
+/* Shared styles for the small feedback components: StatusMessage, Badge, EmptyState, ErrorState, Skeleton. */
+
+.status {
+  min-height: 1.5em;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.success {
+  color: var(--yes);
+}
+
+.error {
+  color: var(--no);
+}
+
+.info {
+  color: var(--muted);
+}
+
+.badge {
+  font-weight: 700;
+  font-size: 1rem;
+  white-space: nowrap;
+  border-radius: 999px;
+  padding: 8px 14px;
+}
+
+.badge.yes {
+  background: var(--yes-soft);
+  color: var(--yes);
+}
+
+.badge.no {
+  background: var(--no-soft);
+  color: var(--no);
+}
+
+.empty {
+  border: 2px dashed var(--line);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  color: var(--muted);
+  font-size: 1.05rem;
+  text-align: center;
+  margin: 0;
+}
+
+.errorBox {
+  border: 2px solid var(--no);
+  background: var(--no-soft);
+  color: var(--ink);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: grid;
+  gap: 14px;
+  justify-items: start;
+}
+
+.errorTitle {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0;
+  color: var(--no);
+}
+
+.errorMessage {
+  margin: 0;
+}
+
+.skeletonList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.skeleton {
+  height: 84px;
+  border-radius: var(--radius-lg);
+  background: var(--line);
+  opacity: 0.6;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .skeleton {
+    animation: pulse 1.2s ease-in-out infinite;
+  }
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.3;
+  }
+}
